@@ -8,7 +8,7 @@ public class Main {
         List<Integer> happyTickets = calculateHappyTickets(ID_SIZE);
 
         for (Integer happyTicket : happyTickets) {
-            printTicketId(happyTicket, ID_SIZE);
+            System.out.printf("%0" + ID_SIZE + "d%n", happyTicket);
         }
     }
 
@@ -53,20 +53,6 @@ public class Main {
         }
 
         return result;
-    }
-
-    private static void printTicketId(Integer number, Integer idSize) {
-        Integer temp = number;
-        int counter;
-
-        for (counter = 0; temp >= 1; counter++) {
-            temp /= 10;
-        }
-
-        for (int i = 0; i < idSize - counter; i++) {
-            System.out.print(0);
-        }
-        System.out.println((number != 0) ? number : "");
     }
 
 }
